@@ -18,8 +18,6 @@ function App() {
 
     if (_token) {
       setToken(_token);
-
-      //gives spotify your access token
       spotify.setAccessToken(_token);
 
       spotify.getMe().then((user) => {

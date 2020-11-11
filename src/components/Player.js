@@ -3,7 +3,7 @@ import '../css/player.css'
 
 function Player() {
   return (
-    <div>MyComponent</div>
+    <div>Player Component</div>
   )
 }
 
