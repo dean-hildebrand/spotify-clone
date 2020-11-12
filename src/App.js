@@ -32,6 +32,13 @@ function App() {
           user: user
         })
       });
+//grabs logged in users playlists and sets it in data layer
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: 'SET_PLAYLISTS',
+          playlists: playlists,
+        })
+      })
     }
   }, []);
 
