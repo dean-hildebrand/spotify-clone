@@ -2,13 +2,17 @@ import React from 'react'
 import '../css/player.css'
 import Sidebar from '../components/Sidebar'
 import Body from '../components/Body'
+import Footer from '../components/Footer'
 
 function Player() {
   return (
     <div className="player">
-    <h1>I am the player component</h1>
+    <div className="player__body">
     <Sidebar />
     <Body />
+    </div>
+
+    <Footer />
     </div>
   )
 }
