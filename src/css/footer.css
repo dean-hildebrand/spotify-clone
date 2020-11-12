@@ -2,7 +2,21 @@
   position: fixed;
   bottom: 0;
   height: 65px;
-  width: 100%;
+  width: 97%;
   background-color: #282828;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__left {
+
+}
+
+.footer__center {
+
+}
+
+.footer__right{
+  
 }
