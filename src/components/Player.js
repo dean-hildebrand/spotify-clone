@@ -1,20 +1,20 @@
-import React from 'react'
-import '../css/player.css'
-import Sidebar from '../components/Sidebar'
-import Body from '../components/Body'
-import Footer from '../components/Footer'
+import React from "react";
+import "../css/player.css";
+import Sidebar from "../components/Sidebar";
+import Body from "../components/Body";
+import Footer from "../components/Footer";
 
-function Player() {
+function Player({ spotify }) {
   return (
     <div className="player">
-    <div className="player__body">
-    <Sidebar />
-    <Body />
-    </div>
+      <div className="player__body">
+        <Sidebar />
+        <Body spotify={spotify}/>
+      </div>
 
-    <Footer />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default Player
+export default Player;
