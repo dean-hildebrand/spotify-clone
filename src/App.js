@@ -9,7 +9,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{user, token }, dispatch] = useDataLayerValue();
+  const [{ user, token }, dispatch] = useDataLayerValue();
 
   //runs code base on given condition
   useEffect(() => {
@@ -26,24 +26,34 @@ function App() {
       spotify.setAccessToken(_token);
 
       spotify.getMe().then((user) => {
-  //dispatches the user into the data layer to be read by any component
+        //dispatches the user into the data layer to be read by any component
         dispatch({
           type: "SET_USER",
-          user: user
-        })
+          user: user,
+        });
       });
-//grabs logged in users playlists and sets it in data layer
+      //grabs logged in users playlists and sets it in data layer
       spotify.getUserPlaylists().then((playlists) => {
         dispatch({
-          type: 'SET_PLAYLISTS',
+          type: "SET_PLAYLISTS",
           playlists: playlists,
+        });
+      });
+      // get users discover weekly feed
+      spotify.getPlaylist("37i9dQZEVXcKpLzRUQYuJ1").then(res => {
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: res
+
         })
       })
     }
   }, []);
 
   return (
-    <div className="app">{token ? <Player spotify={spotify}/> : <Login />}</div>
+    <div className="app">
+      {token ? <Player spotify={spotify} /> : <Login />}
+    </div>
   );
 }
 
