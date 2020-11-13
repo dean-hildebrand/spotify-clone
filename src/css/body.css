@@ -3,5 +3,30 @@
   height: 100vh;
   color: white;
   padding: 30px;
-  background: linear-gradient(rgba(91, 87, 115), black)
+  background: linear-gradient(rgba(91, 87, 115), black);
+}
+
+.body__info {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+
+.body__infoText > img {
+  height: 20vw;
+  margin: 0 20px;
+  /* box-shadow: linear-gradient(rgb(111,111,111,0.2)) */
+}
+
+.body__infoText {
+  flex: 1;
+}
+
+.body__infoText > h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.body__infoText > p {
+  font-size: 14px;
 }
