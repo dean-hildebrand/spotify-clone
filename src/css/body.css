@@ -3,7 +3,12 @@
   height: 100vh;
   color: white;
   padding: 30px;
+  overflow-y: overlay;
   background: linear-gradient(rgba(91, 87, 115), black);
+}
+
+.body::-webkit-scrollbar {
+  display: none;
 }
 
 .body__info {

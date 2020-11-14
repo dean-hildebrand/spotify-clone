@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/body.css";
 import Header from "./Header";
+import SongRow from "./SongRow";
 import { useDataLayerValue } from "../DataLayer";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled"
 import FavoriteIcon from "@material-ui/icons/Favorite"
@@ -32,8 +33,10 @@ console.log(discover_weekly?.tracks.items)
       <FavoriteIcon fontSize="large"/>
       <MoreHorizIcon />
       </div>
-      {/* List of Songs */}
-      {console.log(discover_weekly?.tracks.items)}
+
+      {discover_weekly?.tracks.items.map(item => (
+        <SongRow track={item.track} />
+      ))}
       </div>
     </div>
   );
