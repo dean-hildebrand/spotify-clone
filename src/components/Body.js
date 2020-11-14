@@ -9,7 +9,7 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz"
 
 function Body({ spotify }) {
   const [{ discover_weekly }, dispatch] = useDataLayerValue();
-
+console.log(discover_weekly?.tracks.items)
   return (
     <div className="body">
       <Header />
@@ -33,6 +33,7 @@ function Body({ spotify }) {
       <MoreHorizIcon />
       </div>
       {/* List of Songs */}
+      {console.log(discover_weekly?.tracks.items)}
       </div>
     </div>
   );
